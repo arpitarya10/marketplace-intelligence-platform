@@ -11,7 +11,7 @@
 
 ## 📌 Overview
 
-The **Marketplace Intelligence Platform** is a data-to-decision system designed to continuously ingest operational data from multiple sources, transform it into structured business context, generate both rule-based and AI-driven intelligence, and route the right insights to the right teams — automatically, and on a recurring cadence.
+The **Marketplace Intelligence Platform** is a data-to-decision system designed to continuously ingest operational data from multiple sources, transform it into structured business context, generate both rule-based and AI-driven intelligence, and route the right insights to the right teams - automatically, and on a recurring cadence.
 
 Instead of teams manually pulling reports, writing ad-hoc SQL, or waiting for a monthly business review to learn about a problem, this platform closes the loop between **raw operational data → intelligence → action → tracking → leadership visibility**.
 
@@ -25,11 +25,11 @@ It was built to answer a simple but persistent organizational problem:
 
 Marketplace-style businesses generate operational signal across several disconnected systems:
 
-- **Order & transaction systems** — orders, payments, customers, returns, exchanges
-- **Call center / support systems** — tickets, call logs, resolution times, sentiment
-- **Incident management systems** — outages, SLA breaches, courier/logistics failures
+- **Order & transaction systems** - orders, payments, customers, returns, exchanges
+- **Call center / support systems** - tickets, call logs, resolution times, sentiment
+- **Incident management systems** - outages, SLA breaches, courier/logistics failures
 
-These systems rarely talk to each other, and even when data is available, it usually stays as **raw data** — not **intelligence**. Business teams either:
+These systems rarely talk to each other, and even when data is available, it usually stays as **raw data** - not **intelligence**. Business teams either:
 - Wait for a manual, periodic report, or
 - Build their own one-off dashboards with no shared source of truth, or
 - Miss early warning signals entirely because no one is "watching" across sources.
@@ -100,7 +100,7 @@ This platform was built to solve that gap systematically.
 
 ## 🔄 How It Works
 
-### Step 1 — Data Aggregation
+### Step 1 - Data Aggregation
 Raw data is pulled and consolidated from three primary sources into a single aggregation layer:
 
 | Source | Data Captured |
@@ -109,29 +109,29 @@ Raw data is pulled and consolidated from three primary sources into a single agg
 | **Call Center Systems** | Call logs, tickets, resolution times, escalation flags |
 | **Incident Management Systems** | Operational incidents, courier/logistics failures, outages |
 
-This step focuses purely on **collection and consolidation** — no interpretation happens here yet.
+This step focuses purely on **collection and consolidation** - no interpretation happens here yet.
 
-### Step 2 — Transformation
-The aggregated raw data is cleaned, normalized, deduplicated, and joined across sources to produce **business-meaningful entities** — for example, a unified customer view that combines their order history, support interactions, and any incidents tied to their orders.
+### Step 2 - Transformation
+The aggregated raw data is cleaned, normalized, deduplicated, and joined across sources to produce **business-meaningful entities** - for example, a unified customer view that combines their order history, support interactions, and any incidents tied to their orders.
 
-### Step 3 — Intelligence Generation
+### Step 3 - Intelligence Generation
 This is the core of the platform, split into two complementary intelligence tracks:
 
 #### 🔹 3A. Conventional / Rule-Based Intelligence
 Deterministic, threshold-driven logic applied to the transformed data. Examples:
-- **Customer segmentation** — e.g., a customer is flagged as **VIP** if their order count or Average Order Value (AOV) crosses a defined threshold.
-- **SLA monitoring** — e.g., a courier/logistics case is flagged as an **SLA breach** if unresolved beyond 48 hours.
+- **Customer segmentation** - e.g., a customer is flagged as **VIP** if their order count or Average Order Value (AOV) crosses a defined threshold.
+- **SLA monitoring** - e.g., a courier/logistics case is flagged as an **SLA breach** if unresolved beyond 48 hours.
 - Other configurable business rules for anomaly detection, churn risk flags, return-rate thresholds, etc.
 
 This layer is fast, explainable, auditable, and forms the reliable backbone of the intelligence system.
 
 #### 🔹 3B. Dynamic / AI-Driven Intelligence
-A hybrid of **local LLMs** and **cloud-based LLMs** is used to surface intelligence that static rules cannot easily capture — pattern recognition across unstructured text (call transcripts, ticket notes, incident descriptions), root-cause summarization, sentiment and emerging-issue detection, and natural-language synthesis of what the data is "saying."
+A hybrid of **local LLMs** and **cloud-based LLMs** is used to surface intelligence that static rules cannot easily capture - pattern recognition across unstructured text (call transcripts, ticket notes, incident descriptions), root-cause summarization, sentiment and emerging-issue detection, and natural-language synthesis of what the data is "saying."
 
-The local/cloud LLM mix was a deliberate design choice to balance **data sensitivity, latency, and cost** — routine or sensitive inference is handled locally, while more complex reasoning tasks are offloaded to cloud models where appropriate.
+The local/cloud LLM mix was a deliberate design choice to balance **data sensitivity, latency, and cost** - routine or sensitive inference is handled locally, while more complex reasoning tasks are offloaded to cloud models where appropriate.
 
-### Step 4 — Routing & Distribution
-Generated intelligence isn't dumped into one dashboard — it's **routed contextually** to the teams that need it, via **Microsoft Teams** and **Slack** channels:
+### Step 4 - Routing & Distribution
+Generated intelligence isn't dumped into one dashboard - it's **routed contextually** to the teams that need it, via **Microsoft Teams** and **Slack** channels:
 
 | Stakeholder | Example Focus of Queries Served |
 |---|---|
@@ -142,16 +142,16 @@ Generated intelligence isn't dumped into one dashboard — it's **routed context
 | **Product** | Recurring pain points, feature-linked complaints |
 | **Engineering** | Incident root causes, system-level reliability signals |
 
-Each team receives targeted, relevant insight — not a generic firehose of data.
+Each team receives targeted, relevant insight - not a generic firehose of data.
 
-### Step 5 — Tracking & Accountability
+### Step 5 - Tracking & Accountability
 Every actionable insight generated is **tracked to closure**:
 - Action items are logged against the relevant team/owner.
 - Status is periodically reviewed and summarized.
 - A **summary report is shared with the leadership of each vertical/cluster** (e.g., the Operations Head for operations-linked items, the Product Head for product-linked items), ensuring accountability doesn't stop at "insight delivered."
 
 ### Leadership Reporting Cadence
-A **bi-monthly consolidated snapshot** — combining data points, generated insights, and tracked action status — is shared with **senior leadership**, giving a periodic, trend-aware view of marketplace health across all functions.
+A **bi-monthly consolidated snapshot** - combining data points, generated insights, and tracked action status - is shared with **senior leadership**, giving a periodic, trend-aware view of marketplace health across all functions.
 
 ---
 
@@ -169,11 +169,11 @@ A **bi-monthly consolidated snapshot** — combining data points, generated insi
 
 ## 🧠 Key Design Principles
 
-1. **Separate deterministic and probabilistic intelligence** — rule-based logic for well-understood thresholds, LLM-driven intelligence for nuanced, unstructured, or emerging patterns.
-2. **Hybrid LLM strategy** — local models for sensitive/low-latency needs, cloud models for heavier reasoning, balancing cost, speed, and data governance.
-3. **Push, don't make teams pull** — insights are routed directly into the tools teams already work in (Teams/Slack), reducing time-to-awareness.
-4. **Close the loop** — intelligence without tracking is just noise; every insight is tied to an owner and a follow-up cadence.
-5. **Leadership visibility without leadership overhead** — a recurring, digestible snapshot rather than requiring leadership to chase data themselves.
+1. **Separate deterministic and probabilistic intelligence** - rule-based logic for well-understood thresholds, LLM-driven intelligence for nuanced, unstructured, or emerging patterns.
+2. **Hybrid LLM strategy** - local models for sensitive/low-latency needs, cloud models for heavier reasoning, balancing cost, speed, and data governance.
+3. **Push, don't make teams pull** - insights are routed directly into the tools teams already work in (Teams/Slack), reducing time-to-awareness.
+4. **Close the loop** - intelligence without tracking is just noise; every insight is tied to an owner and a follow-up cadence.
+5. **Leadership visibility without leadership overhead** - a recurring, digestible snapshot rather than requiring leadership to chase data themselves.
 
 ---
 
